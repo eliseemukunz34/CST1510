@@ -2,9 +2,9 @@
 RECORD CHECK  -  my version
 ===========================
 
-Name  :
-Lane  :  AI / Cyber / IT      (delete two)
-Date  :
+Name  :Elisee Mukunzi
+Lane  :IT      
+Date  :2023-10-01
 
 Run it:   python template.py
 
@@ -64,3 +64,39 @@ print("=" * 34)
 #    [ ] Run it three times with different numbers
 #    [ ] Run it with a total of 0 and note the error (do not fix it yet)
 #    [ ] Check every variable name says what it holds
+
+# ==================================================================== INPUT
+# 1. Ask for your three values.
+
+label = input("Label (name, hostname, or IP): ")
+value = float(input("Value: "))
+limit = float(input("Limit: "))
+
+# ================================================================== PROCESS
+# 2. Work out the difference and the percentage.
+
+difference = value - limit
+percent = (value / limit) * 100
+
+# 3. Decide a status and store it in a variable called status.
+
+if percent >= 100:
+    status = "OVER LIMIT"
+elif percent >= 90:
+    status = "WARNING"
+else:
+    status = "OK"
+
+# =================================================================== OUTPUT
+# 4. Print the report.
+
+print()
+print("=" * 34)
+print(f"  RECORD CHECK  -  {label}")
+print("=" * 34)
+print(f"  Value       : {value:>10.2f}")
+print(f"  Limit       : {limit:>10.2f}")
+print(f"  Difference  : {difference:>+10.2f}")
+print(f"  Of limit    : {percent:>9.1f} %")
+print(f"  Status      : {status:<10}")
+print("=" * 34)
